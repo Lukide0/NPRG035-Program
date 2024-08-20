@@ -2,6 +2,7 @@ using task_tracker.Cli;
 
 namespace task_tracker.Presenter;
 
+/// <summary> Presenter for handling CLI operations. </summary>
 public class CliPresenter : IPresenter
 {
     protected BaseOptions _Options;
@@ -25,6 +26,15 @@ public class CliPresenter : IPresenter
                 break;
             case FilterTaskOptions opts:
                 presenter = new CliTaskFilterPresenter(opts);
+                break;
+            case StartTimerOptions opts:
+                presenter = new CliTimerStartPresenter(opts);
+                break;
+            case PauseTimerOptions opts:
+                presenter = new CliTimerPausePresenter(opts);
+                break;
+            case FilterTimerOptions opts:
+                presenter = new CliTimerFilterPresenter(opts);
                 break;
             default:
                 return;
