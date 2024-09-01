@@ -4,6 +4,7 @@ using System.IO;
 using task_tracker.Cli;
 using task_tracker.Model;
 using task_tracker.Presenter;
+using System.Diagnostics;
 
 namespace task_tracker;
 
@@ -101,15 +102,17 @@ class App
         UseColors = !options.NoColor;
         Verbose = options.Verbose;
 
-        IPresenter presenter;
-        if (options.Options is null)
-        {
+        Debug.Assert(options.Options is not null);
 
-            presenter = new MenuPresenter();
-        }
-        else
+        IPresenter presenter;
+        switch (options.Options)
         {
-            presenter = new CliPresenter(options.Options);
+            case UIOptions _:
+                presenter = new MenuPresenter();
+                break;
+            default:
+                presenter = new CliPresenter(options.Options);
+                break;
         }
 
         presenter.Run();

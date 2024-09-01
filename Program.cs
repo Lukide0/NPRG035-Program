@@ -8,7 +8,7 @@ class Program
     {
         CliOptions? options = Parser.Parse(args);
 
-        if (options is null)
+        if (options is null || options.Options is null)
         {
             return;
         }

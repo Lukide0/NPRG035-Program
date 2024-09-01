@@ -40,5 +40,6 @@ public class CliTaskAddPresenter : IPresenter
         }
 
         Logger.Info($"Task added with ID: {record.Id}");
+        Logger.Data(record.Id);
     }
 }

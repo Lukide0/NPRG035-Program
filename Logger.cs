@@ -33,6 +33,10 @@ public class Logger
         Log($"[ERR]: {message}", true, color: Color.Red);
     }
 
+    /// <summary> Log data.</summary>
+    /// <param name="obj"> Object.</param>
+    public static void Data<T>(T obj) { AnsiConsole.WriteLine(obj.ToString()); }
+
     /// <summary> Log message.</summary>
     /// <param name="message"> Message.</param>
     /// <param name="force"> Force log.</param>

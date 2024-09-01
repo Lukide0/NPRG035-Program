@@ -24,6 +24,8 @@ public enum CmdType
     RemoveTimer,
     /// <summary> Filter timers. </summary>
     FilterTimer,
+    /// <summary> Show UI. </summary>
+    UI,
 }
 
 /// <summary> Base options. </summary>
@@ -64,6 +66,10 @@ public record class FilterTaskOptions
 /// <summary> Filter timer options. </summary>
 public record class FilterTimerOptions
 (TimerFilterOptions Filter) : BaseOptions(CmdType.FilterTasks);
+
+/// <summary> UI options. </summary>
+public record class UIOptions
+() : BaseOptions(CmdType.UI);
 
 /// <summary> Cli options. </summary>
 public class CliOptions
