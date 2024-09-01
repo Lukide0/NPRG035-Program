@@ -43,4 +43,6 @@ graph TD
 - TimerModel
   - Umožňuje práci s časovači
 - TaskTimerModel
-  Slouží k propojení úkolů s časovači
+  - Slouží k propojení úkolů s časovači
+- Prompt
+  - Slouží k získání dat od uživatele pomocí TUI
