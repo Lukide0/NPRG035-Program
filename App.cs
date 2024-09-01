@@ -5,6 +5,7 @@ using task_tracker.Cli;
 using task_tracker.Model;
 using task_tracker.Presenter;
 using System.Diagnostics;
+using Spectre.Console;
 
 namespace task_tracker;
 
@@ -101,6 +102,12 @@ class App
         Logger.Info("running");
         UseColors = !options.NoColor;
         Verbose = options.Verbose;
+
+        if (!UseColors)
+        {
+            AnsiConsole.Console.Profile.Capabilities.ColorSystem =
+                ColorSystem.NoColors;
+        }
 
         Debug.Assert(options.Options is not null);
 
