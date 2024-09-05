@@ -10,6 +10,36 @@ Terminálová todo aplikace s UI a časovači na jednotlivé úkoly.
 
 - .NET 8
 
+## Instalace
+
+### Postup A
+
+1. **Stáhněte sestavenou verzi** z GitHubu (sekce Releases).  
+   - Otevřete webovou stránku repozitáře na GitHubu.
+   - Přejděte na záložku **Releases**.
+   - Stáhněte soubor (např. `portable.zip`).
+2. **Rozbalte soubor**.  
+   - Klikněte pravým tlačítkem na stažený `.zip` soubor a vyberte **Extrahovat vše**.
+   - Vyberte složku, kam chcete soubory rozbalit, a potvrďte.
+
+### Postup B
+
+1. **Naklonujte repozitář** `git clone https://github.com/Lukide0/NPRG035-Program.git`
+2. **Otevřete ve Visual Studiu** – Otevřete soubor `.sln`.
+3. **Obnovte NuGet balíčky** – Klikněte pravým tlačítkem na řešení a vyberte **Restore NuGet Packages**.
+4. **Vyberte konfiguraci Release** - V horní liště klikněte na rozbalovací seznam vedle tlačítka pro spuštění a vyberte Release.
+5. **Sestavte projekt** – Stiskněte `Ctrl + Shift + B` pro sestavení bez spuštění.
+6. **Aplikace** - Aplikace se nachází ve složce `bin/Release/net8.0`
+
+### Postup C
+
+1. **Naklonujte repozitář** `git clone https://github.com/Lukide0/NPRG035-Program.git`
+2. **Otevřete projekt** – Přejděte do složky projektu: `cd NPRG035-Program`
+3. **Obnovte NuGet balíčky** `dotnet restore`
+4. **Sestavte projekt bez spuštění** `dotnet build --configuration Release`
+5. **Aplikace** - Aplikace se nachází ve složce `bin/Release/net8.0`
+
+
 ## Příkazy
 
 ```
