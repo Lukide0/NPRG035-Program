@@ -221,6 +221,10 @@ Options:
 > task_tracker timer filter --by-state running
 ```
 
+### Konfigurace
+
+Konfigurační soubor `config.json` se nachází ve stejném adresáři jako aplikace. Pokud konfigurační soubor neexistuje, aplikace automaticky vytvoří nový.
+
 ## Dokumentace pro vývojáře
 
 [link](./docs/dev.md)
