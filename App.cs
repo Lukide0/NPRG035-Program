@@ -1,11 +1,11 @@
-using System;
+using Spectre.Console;
 using SQLite;
+using System;
+using System.Diagnostics;
 using System.IO;
 using task_tracker.Cli;
 using task_tracker.Model;
 using task_tracker.Presenter;
-using System.Diagnostics;
-using Spectre.Console;
 
 namespace task_tracker;
 
@@ -77,12 +77,7 @@ class App
 
         try
         {
-            if (!File.Exists(filepath))
-            {
-                File.Create(filepath);
-            }
-
-            DBConnection = new SQLiteConnection(filepath);
+            DBConnection = new SQLiteConnection(filepath, SQLiteOpenFlags.Create | SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.FullMutex);
             DBConnection.CreateTables<Task.TaskRecord, Task.TimerRecord>();
         }
         catch (SQLiteException ex)
